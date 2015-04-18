@@ -1,0 +1,40 @@
+package controle;
+
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+import dao.OrderDAO;
+import model.Order;
+
+@ManagedBean
+@SessionScoped
+public class OrderBean {
+	public List<Order> orders;
+	private Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+	private Order order;
+	private OrderDAO orderDAO = new OrderDAO();
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	public List<Order> getOrders() {
+		return orderDAO.getOrders();
+	}
+	
+	public List<Order> getTeste() {
+		
+		this.orders = orderDAO.getOrders();
+		
+		return orders;
+	}
+}

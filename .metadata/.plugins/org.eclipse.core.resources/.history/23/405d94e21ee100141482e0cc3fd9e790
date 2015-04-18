@@ -1,0 +1,34 @@
+package dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Order;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+
+public class OrderDAO {
+	private List<Order> pedidos = ArrayList<Order>();
+	
+	public List<Order> getOrders() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		
+		try {
+			Transaction transaction = session.beginTransaction();
+			
+			@SuppressWarnings("unchecked")
+			this.pedidos = session.createQuery("from Order").list();
+			
+			transaction.commit();
+		} finally {
+			session.close();
+			//HibernateUtil.getSessionFactory().close();
+		}
+		
+		
+		return pedidos;
+	}
+}

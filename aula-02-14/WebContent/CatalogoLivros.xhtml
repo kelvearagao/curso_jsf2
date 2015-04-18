@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:commandButton value="Voltar para tela inicial"/>
+		Título
+		<h:inputText value="#{livroBean.livro.titulo}"/><br/>
+		Autores
+		<h:inputText value="#{livroBean.livro.autores}"/><br/>
+		Assunto
+		<h:inputText value="#{livroBean.livro.assunto}"/><br/>
+		<h:commandButton value="Incluir" action="#{livroBean.incluir}"/>
+	</h:form>
+	
+	<hr/>
+	
+	<h:form>
+		Pesquisar livro:
+		<h:inputText valueChangeListener="#{livroBean.pesquisarLivro}" 
+			onchange="submit()"/>
+	</h:form>
+	
+	<hr/>
+	
+	<h:form>
+		<ol>
+			<ui:repeat var="livro" value="#{livroBean.livrosFiltrados}">
+				<li>
+					#{livro.titulo} -- #{livro.autores} -- #{livro.assunto}
+					<h:commandButton value="Exluir" >
+						<f:setPropertyActionListener target="#{livroBean.livroSelecionado}" value="#{livro}"/>
+						<f:actionListener binding="#{livroBean}"/>
+					</h:commandButton>					
+				</li>
+			</ui:repeat>
+		</ol>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,15 @@
+package controle;
+
+import javax.annotation.PostConstruct;
+
+import repository.CountryRepository;
+import util.Repository;
+
+public class CountryBean {
+	Repository repository = new Repository();
+	
+	@PostConstruct
+	public void init() {
+		CountryRepository countryRepository = repository.getCountries();
+	}
+}

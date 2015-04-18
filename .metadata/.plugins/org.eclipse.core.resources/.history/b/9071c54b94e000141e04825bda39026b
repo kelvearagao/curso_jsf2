@@ -1,0 +1,16 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "orders")
+public class Order {
+	private int id;
+	private String code;
+	private int paxes;
+	private int adult;
+	private int childs;
+	private float total_price;
+	private String currency;
+}

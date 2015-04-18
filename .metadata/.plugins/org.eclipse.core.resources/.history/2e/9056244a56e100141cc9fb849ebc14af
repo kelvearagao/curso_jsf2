@@ -1,0 +1,15 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="cities")
+public class City {
+	long id;
+	String name;
+	String slug;
+	long state_id;
+	String clean_name;
+	long favorite_hotel;
+}

@@ -1,0 +1,7 @@
+package repository.dao;
+
+import repository.CountryRepository;
+
+public class CountryDAO implements CountryRepository {
+
+}

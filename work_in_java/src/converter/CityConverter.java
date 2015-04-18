@@ -1,0 +1,48 @@
+package converter;
+
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
+import javax.faces.convert.FacesConverter;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
+import util.HibernateUtil;
+import model.City;
+
+@FacesConverter(forClass=City.class)
+public class CityConverter implements Converter{
+
+	@Override
+	public Object getAsObject(FacesContext arg0, UIComponent arg1, String value) {
+		if ( value != null )
+		{
+			System.out.println("Convertendo pra objeto...");
+			Session session = (Session) HibernateUtil.getRequestAttribute("session");
+			
+			Criteria criteria = session.createCriteria(City.class);
+			criteria.add(Restrictions.eq("id", Long.valueOf(value)));
+			
+			City city = (City) criteria.uniqueResult();
+			System.out.println("Nome da cidade " + city.getName());
+			
+			return city;
+		}
+		return null;
+	}
+
+	@Override
+	public String getAsString(FacesContext arg0, UIComponent arg1, Object value) {
+		if ( value != null )
+		{
+			String newValue = Long.toString(((City) value).getId());
+			
+			return newValue;
+		}
+		
+		return null;
+	}
+
+}

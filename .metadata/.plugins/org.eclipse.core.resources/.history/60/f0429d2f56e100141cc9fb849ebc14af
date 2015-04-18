@@ -1,0 +1,10 @@
+package model;
+
+import javax.persistence.Entity;
+
+@Entity
+@Entity(name="cities")
+public class City {
+	
+
+}

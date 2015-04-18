@@ -1,0 +1,30 @@
+package dao;
+
+import java.util.List;
+
+import javax.transaction.Transaction;
+
+import model.Order;
+
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+
+public class OrderDAO {
+	public List<Order> getOrders() {
+		try {
+			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			org.hibernate.Transaction transaction = session.beginTransaction();
+			
+			
+			@SuppressWarnings("unchecked")
+			List<Order> orders = session.createQuery("from Order").list();
+			
+			session.getTransaction().commit();
+		}
+		session.close();
+		//HibernateUtil.getSessionFactory().close();
+		
+		return orders;
+	}
+}

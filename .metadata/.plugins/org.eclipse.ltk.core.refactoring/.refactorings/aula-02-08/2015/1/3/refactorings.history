@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.curso.jsf2.visao.GestaoProdutos&apos; to &apos;GestaoProdutosBean&apos;&#x0A;- Original project: &apos;aula-02-08&apos;&#x0A;- Original element: &apos;com.curso.jsf2.visao.GestaoProdutos&apos;&#x0A;- Renamed element: &apos;com.curso.jsf2.visao.GestaoProdutosBean&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;GestaoProdutos&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.curso.jsf2.visao{GestaoProdutos.java[GestaoProdutos" matchStrategy="1" name="GestaoProdutosBean" qualified="false" references="true" similarDeclarations="false" stamp="1421281690365" textual="false" version="1.0"/>
+</session>

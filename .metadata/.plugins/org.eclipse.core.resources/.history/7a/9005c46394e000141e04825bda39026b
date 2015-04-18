@@ -1,0 +1,59 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "orders")
+public class Order {
+	private int id;
+	private String code;
+	private int paxes;
+	private int adult;
+	private int childs;
+	private float total_price;
+	private String currency;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public int getPaxes() {
+		return paxes;
+	}
+	public void setPaxes(int paxes) {
+		this.paxes = paxes;
+	}
+	public int getAdult() {
+		return adult;
+	}
+	public void setAdult(int adult) {
+		this.adult = adult;
+	}
+	public int getChilds() {
+		return childs;
+	}
+	public void setChilds(int childs) {
+		this.childs = childs;
+	}
+	public float getTotal_price() {
+		return total_price;
+	}
+	public void setTotal_price(float total_price) {
+		this.total_price = total_price;
+	}
+	public String getCurrency() {
+		return currency;
+	}
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+}

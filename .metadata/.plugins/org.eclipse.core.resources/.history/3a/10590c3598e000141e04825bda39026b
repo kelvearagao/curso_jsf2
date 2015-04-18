@@ -1,0 +1,19 @@
+package teste;
+
+import model.Order;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+
+public class Teste {
+	
+	public static void main(String args[]) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		
+		Criteria criteria = session.createCriteria(Order.class);
+	
+		HibernateUtil.getSessionFactory().close();
+	}
+}

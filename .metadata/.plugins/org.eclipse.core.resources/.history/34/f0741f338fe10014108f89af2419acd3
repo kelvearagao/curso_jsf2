@@ -1,0 +1,35 @@
+package teste;
+
+public class Days {
+	public boolean sun;
+	public boolean mon;
+	public boolean tue;
+	public boolean wed;
+	public boolean thu;
+	public boolean fri;
+	public boolean sat;
+	
+	public boolean getSun() {
+		return sun;
+	}
+	public boolean isMon() {
+		return mon;
+	}
+	public boolean isTue() {
+		return tue;
+	}
+	public boolean isWed() {
+		return wed;
+	}
+	public boolean isThu() {
+		return thu;
+	}
+	public boolean isFri() {
+		return fri;
+	}
+	public boolean isSat() {
+		return sat;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.127
+/home/kelve/curso_jsf2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3595761467.index
+/aula-01-08/src
+/home/kelve/curso_jsf2/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1106654961.index
+/AplicacaoSimples

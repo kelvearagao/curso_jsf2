@@ -1,0 +1,17 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+	<div class="row-fluid">
+		<div class="span12">
+			<ul class="nav nav-list">
+			  	<li class="nav-header">List header</li>
+			  	<li class="active"><a href="#">Home</a></li>
+			  	<li><a href="/hermes/hotel/list.xhtml">Hotel</a></li>
+			  	<li><a href="/hermes/city/list.xhtml">City</a></li>
+			</ul>
+		</div>
+	</div>
+</ui:composition>

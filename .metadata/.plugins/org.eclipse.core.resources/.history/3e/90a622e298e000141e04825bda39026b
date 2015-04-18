@@ -1,0 +1,26 @@
+package teste;
+
+import java.util.List;
+
+import model.Order;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+
+public class Teste {
+	
+	public static void main(String args[]) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		
+		Criteria criteria = session.createCriteria(Order.class);
+		List<Order> orders = criteria.list();
+		
+		for (Order order : orders) {
+			System.out.println("Id " + order.getId());
+		}
+	
+		HibernateUtil.getSessionFactory().close();
+	}
+}

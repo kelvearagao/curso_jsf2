@@ -1,0 +1,31 @@
+package converter;
+
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
+import javax.faces.convert.FacesConverter;
+
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+import model.City;
+
+@FacesConverter(forClass=City.class)
+public class CityConverter implements Converter{
+
+	@Override
+	public Object getAsObject(FacesContext arg0, UIComponent arg1, String value) {
+		if ( value != null )
+		{
+			Session session = (Session) HibernateUtil.getRequestAttribute("session");
+		}
+		return null;
+	}
+
+	@Override
+	public String getAsString(FacesContext arg0, UIComponent arg1, Object arg2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

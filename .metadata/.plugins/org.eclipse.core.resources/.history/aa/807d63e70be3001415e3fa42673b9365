@@ -1,0 +1,21 @@
+package util;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+
+import repository.CountryRepository;
+import repository.dao.CountryDAO;
+import model.Country;
+
+public class Repository implements Serializable{
+	
+	public CountryRepository getCountries() {
+		new CountryDAO(this.getSession())
+		return ;
+	}
+	
+	private Session getSession() {
+		return (Session) HibernateUtil.getRequestAttribute("session");
+	}
+}

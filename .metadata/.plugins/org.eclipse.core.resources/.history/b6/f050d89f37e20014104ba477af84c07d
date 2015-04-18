@@ -1,0 +1,27 @@
+<ui:composition template="/template/adm.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<ui:param name="active" value="Visualizar"></ui:param>
+	
+	<ui:define name="content">
+		<div class="row-fluid">
+			<div class="span12">
+				<h:form>
+					<h:outputLabel value="Nome" for="name"/>
+					<h:inputText value="#{hotelBean.hotel.name}" id="name"/>
+					<h:outputLabel value="#{hotelBean.hotel.type}"/>
+					<h:selectOneMenu value="">
+						
+					</h:selectOneMenu>
+					<h:outputLabel value="Estrelas"/>
+					<h:inputText value="#{hotelBean.hotel.stars}"/>
+					<h:outputLabel value="Cidade"/>
+					<h:inputText value="#{hotelBean.hotel.city}"/>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

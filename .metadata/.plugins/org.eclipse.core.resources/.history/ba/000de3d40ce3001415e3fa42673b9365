@@ -1,0 +1,22 @@
+package controle;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import model.Country;
+import repository.CountryRepository;
+import util.Repository;
+
+public class CountryBean {
+	Repository repository = new Repository();
+	List<Country> countries = new ArrayList<Country>();
+	
+	@PostConstruct
+	public void init() {
+		CountryRepository countryRepository = repository.getCountries();
+		this.countries = country.
+		
+	}
+}

@@ -1,0 +1,15 @@
+package model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Country {
+	int id;
+	String name;
+	String acronym;
+	Date created_at;
+	Date updated_at;
+	
+}

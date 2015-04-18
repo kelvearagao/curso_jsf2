@@ -1,0 +1,26 @@
+<ui:composition  template="/template/adm.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<ui:param name="active" value="Pagamento"></ui:param>
+	
+	<ui:define name="content">
+		<div class="container-fluid">
+			<h1>Gerar PDF do pagamento</h1>
+			<h:form>
+				Escolha a língua
+				<h:selectOneMenu value="#{geraPDF.lingua}">
+					<f:selectItem itemValue="pt" itemLabel="Português"/>
+					<f:selectItem itemValue="fr" itemLabel="Francês"/>
+					<f:selectItem itemValue="es" itemLabel="Espanhol"/>
+					<f:selectItem itemValue="en" itemLabel="Inglês"/>
+				</h:selectOneMenu>
+				
+				<h:commandButton styleClass="btn" value="Gerar PDF" 
+					style="margin-left: 20px;" action="#{geraPDF.mostraPagamentoPDF}"/>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,34 @@
+package dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Hotel;
+import model.Order;
+
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+
+public class HotelDAO {
+private List<Hotelr> hotels = new ArrayList<Hotelr>();
+	
+	@SuppressWarnings("unchecked")
+	public List<Order> getOrders() {		
+		Session session = (Session) HibernateUtil.getRequestAttribute("session");
+		
+		//Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		//System.out.println("Pegando a sessão!");
+		
+		//Transaction transaction = session.beginTransaction();
+		//System.out.println("Iniciando a transação!");
+	
+		this.pedidos = session.createQuery("from Order").list();
+		System.out.println("Fazendo a consulta!");
+		
+		//transaction.commit();
+		//System.out.println("Comitando a transação!");
+		
+		return pedidos;
+	}
+}

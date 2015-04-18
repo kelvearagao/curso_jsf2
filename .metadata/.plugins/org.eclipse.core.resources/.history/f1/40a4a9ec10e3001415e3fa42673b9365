@@ -1,0 +1,30 @@
+package controle;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import model.Country;
+import repository.CountryRepository;
+import util.Repository;
+
+@ManagedBean
+@SessionScoped
+public class CountryBean implements Serializable{
+	Repository repository = new Repository();
+	List<Country> countries = new ArrayList<Country>();
+	
+	@PostConstruct
+	public void init() {
+		CountryRepository countryRepository = repository.getCountries();
+		this.countries = countryRepository.all();
+	}
+
+	public List<Country> getCountries() {
+		return countries;
+	}
+}

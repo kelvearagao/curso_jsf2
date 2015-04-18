@@ -1,0 +1,56 @@
+package controle;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+import dao.OrderDAO;
+import model.Order;
+
+@ManagedBean
+@SessionScoped
+public class OrderBean {
+	public List<Order> orders = new ArrayList<Order>();
+	private Order order = new Order();
+	private OrderDAO orderDAO = new OrderDAO();
+	
+	@PostConstruct
+	public void init() {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+			
+		Criteria crit = session.createCriteria(Order.class);
+		this.orders = crit.list();
+		
+		session.close();
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	public List<Order> getOrders() {
+		return orderDAO.getOrders();
+	}
+	
+	public String getTeste() {
+		
+		List<Order> orders = orderDAO.getOrders();
+		
+		for (Order order : orders) {
+			System.out.println("Id " + order.getId());
+		}
+		
+		return "teste";
+	}
+}

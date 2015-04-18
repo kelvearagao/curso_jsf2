@@ -1,0 +1,48 @@
+package converter;
+
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
+import javax.faces.convert.FacesConverter;
+
+import model.Type;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
+import com.algaworks.cursojsf2.financeiro.model.Pessoa;
+
+import util.HibernateUtil;
+
+@FacesConverter(forClass=Type.class)
+public class TypeConverter implements Converter {
+
+	@Override
+	public Object getAsObject(FacesContext context, UIComponent component, String value) {
+		if( value == null )
+			return null;
+		
+		System.out.println("Converter: " + value + " !!!");
+		
+		Session session = (Session) HibernateUtil.getRequestAttribute("session");
+		Criteria criteria = session.createCriteria(Type.class);
+		
+		criteria.add(Restrictions.eq("id", Long.valueOf(value)));
+		criteria.setMaxResults(1);
+		
+		Type type = (Type) criteria.uniqueResult();
+		
+		System.out.println("Converter: " + type.getType()  + " !!!");
+		return type;
+	}
+
+	@Override
+	public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object obj) {
+		if (obj != null) {
+			return Long.toString(((Type) obj).getId());
+		}
+		
+		return null;
+	}
+}

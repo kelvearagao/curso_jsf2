@@ -1,0 +1,7 @@
+package controle;
+
+import util.Repository;
+
+public class CountryBean {
+	Repository repository = new Repository();
+}

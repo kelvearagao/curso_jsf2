@@ -1,0 +1,43 @@
+package controle;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import dao.HotelDAO;
+import dao.TypeDAO;
+import model.Hotel;
+import model.Type;
+
+@ManagedBean
+@SessionScoped
+public class HotelBean implements Serializable{
+	Hotel hotel = null;
+	List<Hotel> hotels = null;
+	List<Type> types = null;
+	HotelDAO hotelDAO = new HotelDAO();
+	TypeDAO typeDAO = new TypeDAO();
+	int type;
+	
+	public Hotel getHotel() {
+		return hotel;
+	}
+	
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+	
+	public List<Hotel> getHotels() {
+		return hotelDAO.getHotels();
+	}
+	
+	public List<Type> getTypes() {
+		return typeDAO.getTypes();
+	}
+	
+	public void setHotels(List<Hotel> hotels) {
+		this.hotels = hotels;
+	}
+}

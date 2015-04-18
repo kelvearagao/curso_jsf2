@@ -1,0 +1,30 @@
+package controle;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+
+import model.Hotel;
+
+@ManagedBean
+public class HotelBean implements Serializable{
+	Hotel hotel;
+	List<Hotel> hotels;
+	
+	public Hotel getHotel() {
+		return hotel;
+	}
+	
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+	
+	public List<Hotel> getHotels() {
+		return orderDAO.getOrders();
+	}
+	
+	public void setHotels(List<Hotel> hotels) {
+		this.hotels = hotels;
+	}
+}

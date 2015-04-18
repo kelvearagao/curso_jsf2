@@ -1,0 +1,19 @@
+package controle;
+
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+import dao.CityDAO;
+import model.City;
+
+@ManagedBean
+@SessionScoped
+public class CityBean {
+	City city;
+	List<City> cities;
+	CityDAO cityDAO = new CityDAO();
+	
+
+}

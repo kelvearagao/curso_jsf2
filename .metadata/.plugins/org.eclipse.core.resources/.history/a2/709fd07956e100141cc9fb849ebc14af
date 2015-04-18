@@ -1,0 +1,63 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="cities")
+public class City {
+	long id;
+	String name;
+	String slug;
+	long state_id;
+	String clean_name;
+	long favorite_hotel;
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public String getClean_name() {
+		return clean_name;
+	}
+	
+	public void setClean_name(String clean_name) {
+		this.clean_name = clean_name;
+	}
+	
+	public long getFavorite_hotel() {
+		return favorite_hotel;
+	}
+	
+	public void setFavorite_hotel(long favorite_hotel) {
+		this.favorite_hotel = favorite_hotel;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getSlug() {
+		return slug;
+	}
+	
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+	
+	public long getState_id() {
+		return state_id;
+	}
+	
+	public void setState_id(long state_id) {
+		this.state_id = state_id;
+	}
+}

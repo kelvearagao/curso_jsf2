@@ -1,0 +1,30 @@
+package converter;
+import javax.faces.convert.FacesConverter;
+
+import model.Order;
+
+@FacesConverter(forClass=Order.class)
+public class OrderConverter implements Converter {
+
+	@Override
+	public Object getAsObject(FacesContext context, UIComponent component, String value) {
+		Order retorno = null;
+		
+		if (value != null) {
+			Se
+			GestaoPessoas gestaoPessoas = new GestaoPessoas();
+			retorno = gestaoPessoas.buscarPorCodigo(new Integer(value));
+		}
+		
+		return retorno;
+	}
+
+	@Override
+	public String getAsString(FacesContext context, UIComponent component, Object value) {
+		if (value != null) {
+			return ((Pessoa) value).getCodigo().toString();
+		}
+		return null;
+	}
+
+}

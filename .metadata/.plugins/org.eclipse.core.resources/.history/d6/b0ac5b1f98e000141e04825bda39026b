@@ -1,0 +1,22 @@
+package teste;
+
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+
+public class Teste {
+	
+	public static void main(String args[]) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		/*session.beginTransaction();
+
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setCodigo(8998);
+		pessoa.setNome("Kelve");
+		session.save(pessoa);
+
+		session.getTransaction().commit();*/
+		HibernateUtil.getSessionFactory().close();
+	}
+}

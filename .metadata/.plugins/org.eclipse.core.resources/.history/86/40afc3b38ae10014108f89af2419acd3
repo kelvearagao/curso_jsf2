@@ -1,0 +1,11 @@
+package teste;
+
+public class Days {
+	public boolean sun;
+	public boolean mon;
+	public boolean tue;
+	public boolean wed;
+	public boolean thu;
+	public boolean fri;
+	public boolean sat;
+}

@@ -1,0 +1,16 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+
+import util.HibernateUtil;
+import model.Type;
+
+public class TypeDAO {
+	List<Type> types;
+		
+	public List<Type> getTypes() {
+		Session session = (Session) HibernateUtil.getRequestAttribute("session");
+	}
+}

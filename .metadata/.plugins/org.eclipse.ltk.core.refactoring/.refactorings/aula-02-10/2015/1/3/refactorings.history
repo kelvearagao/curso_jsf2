@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;LivroBean.java&apos; to &apos;aula-02-10/src/com.curso.jsf2.view&apos;&#x0A;- Original project: &apos;aula-02-10&apos;&#x0A;- Destination element: &apos;aula-02-10/src/com.curso.jsf2.view&apos;&#x0A;- Original element: &apos;com.curso.jsf2.model.LivroBean.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;com.curso.jsf2.view" element1="/src&lt;com.curso.jsf2.model{LivroBean.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1421366255985" units="1" version="1.0"/>
+</session>

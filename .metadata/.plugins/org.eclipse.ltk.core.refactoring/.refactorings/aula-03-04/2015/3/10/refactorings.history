@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;formulario.xhtml&apos; to &apos;formulario.xhtml&apos;&#x0A;- Original project: &apos;aula-03-04&apos;&#x0A;- Destination element: &apos;formulario.xhtml&apos;&#x0A;- Original element: &apos;formulario.xhtml&apos;" description="Copy file" element1="WebContent/formulario.xhtml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1425240858800" target="/aula-03-04/WebContent/formulario.xhtml" units="0" version="1.0"/>
+</session>
